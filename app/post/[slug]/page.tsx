@@ -5,6 +5,8 @@ import { PortableText } from '@portabletext/react';
 import Image from 'next/image';
 import React from 'react'
 
+export const revalidate = 30; //revalidate within 30 sec
+
 const getData = async(slug: string) => {
   const query = `*[_type == 'post' && slug.current == '${slug}'][0]`;
   const data = await client.fetch(query)
